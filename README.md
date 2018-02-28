@@ -1,14 +1,20 @@
-# tools
+# Tools
 set of usefool tools for php
 
-## String
+## Installation 
 
-## Object
+composer require flottin/tools:dev-master -vvv
 
-## Sendgrid
+## List 
 
-## Curl
+### String
 
-## Ftp
+### Object
 
-## Excel
+### Sendgrid
+
+### Curl
+
+### Ftp
+
+### Excel
