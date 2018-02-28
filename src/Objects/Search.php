@@ -23,8 +23,9 @@ class Search
     public function __construct($list = array())
     {
 
+
         $this->list = $list;
-        
+
     }
 
     /**
