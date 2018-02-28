@@ -1,0 +1,29 @@
+{
+    "name": "tools/tools",
+    "type": "library",
+    "description": "set of usefull tools for php",
+    "keywords": ["tools","predicate", "list", "object", "excel", "ftp"],
+    "homepage": "https://github.com/flottin/tools",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Florent Lottin",
+            "email": "flottin@gmail.com",
+            "homepage": "http://karatube.in",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "phpunit/phpunit": "^5"
+    },
+    "autoload": {
+        "psr-0": {
+            "Excel": "src"
+        }
+        ,
+        "classmap": [
+            "src/"
+        ]
+    }
+}
