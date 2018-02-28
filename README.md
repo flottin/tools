@@ -5,11 +5,12 @@ set of usefool tools for php
 
 composer require flottin/tools:dev-master -vvv
 
-## List 
 
 ### String
 
 ### Object
+
+find object in a list according to a predicate
 
 ### Sendgrid
 
