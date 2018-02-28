@@ -49,6 +49,7 @@ final class TestTools extends PHPUnit_Framework_TestCase
        $this->listPersons [] = new Person('bob', 'bob@yopmail.com');
        $this->listPersons [] = new Person('ted', 'ted@yopmail.com');
        $this->listPersons [] = new Person('ted', 'ted@ted.com');
+       $this->listPersons [] = new Person('ted', 'ted@ted.com');
    }
 
 }
