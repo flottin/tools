@@ -22,8 +22,9 @@ class Search
 
     public function __construct($list = array())
     {
-    
+
         $this->list = $list;
+        
     }
 
     /**
@@ -56,7 +57,7 @@ class Search
             $list = $this->list;
             $this->begin = false;
         }
- 
+
 
         if (!empty($search) && !empty($list))
         {
