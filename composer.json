@@ -1,5 +1,5 @@
 {
-    "name": "tools/tools",
+    "name": "flottin/tools",
     "type": "library",
     "description": "set of usefull tools for php",
     "keywords": ["tools","predicate", "list", "object", "excel", "ftp"],
