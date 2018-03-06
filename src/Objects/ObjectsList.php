@@ -8,7 +8,7 @@ namespace Tools;
 * $list->find($predicate)
 *
 */
-class Search
+class ObjectsList
 {
     private $list = array();
 
@@ -22,10 +22,7 @@ class Search
 
     public function __construct($list = array())
     {
-
-
         $this->list = $list;
-
     }
 
     /**

@@ -1,12 +1,14 @@
 <?php
-final class TestTools extends PHPUnit_Framework_TestCase
+
+use PHPUnit\Framework\Testcase;
+final class TestTools extends TestCase
 {
     private $listPersons;
 
     public function testObjectsFindEmpty()
     {
         self::getPersons();
-        $list = new  Tools\Search($this->listPersons);
+        $list = new  Tools\ObjectsList($this->listPersons);
         $predicate = ['name' => 'john'];
         $res = $list->find($predicate);
         $this->assertEquals(
@@ -32,15 +34,29 @@ final class TestTools extends PHPUnit_Framework_TestCase
    public function testObjectsFirst()
    {
        self::getPersons();
-       $list = new  Tools\Search($this->listPersons);
+       $list = new  Tools\ObjectsList($this->listPersons);
        $predicate = ['name' => 'bob'];
        $res = $list->first($predicate);
+
        $this->assertEquals(
-           1,
-           count($res)
+           'bob',
+           $res->name
 
        );
    }
+
+   public function testObjectsFindDoublePredicate()
+   {
+        self::getPersons();
+        $list = new  Tools\Search($this->listPersons);
+        $predicate = ['name' => 'bob', 'mail' => 'bob@yopmail.com'];
+        $res = $list->find($predicate);
+        $this->assertEquals(
+            1,
+            count($res)
+
+        );
+    }
 
    private function getPersons()
    {
@@ -63,4 +79,3 @@ class Person {
         $this->mail = $mail;
     }
 }
-
