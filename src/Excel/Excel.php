@@ -1,7 +1,7 @@
 <?php
 namespace Excel;
 
-use Akeneo\Component\SpreadsheetParser\SpreadsheetParser;
+use Akeneo\Component\SpreadsheetParser;
 
 class Excel
 {
