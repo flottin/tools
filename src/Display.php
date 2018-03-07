@@ -36,7 +36,7 @@ class Display
     }
 
     /**
-     * add a separator
+     * add a separator ok
      */
     public static function addsep($count = 120)
     {
