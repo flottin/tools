@@ -21,9 +21,13 @@ class Display
         self::$msg .= $msg . "\n";
     }
 
+    /**
+     * Summary of addPredicate
+     * @param mixed $predicate 
+     */
     public static function addPredicate($predicate)
     {
-        $msg = ''; 
+        $msg = '';
         foreach ($predicate as $label => $value)
         {
             $msg .= $label . " : " . $value . " ";
@@ -31,6 +35,9 @@ class Display
         self::$msg = $msg . "\n";
     }
 
+    /**
+     * add a separator
+     */
     public static function addsep($count = 120)
     {
         self::$msg .= str_repeat('-', $count) . "\n";

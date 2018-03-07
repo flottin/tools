@@ -38,7 +38,7 @@ class Report
 
     public static function getHtml($header, $body):string
     {
-
+        return '';
     }
 
     public static function getCsv($header, $body):string

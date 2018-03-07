@@ -10,8 +10,6 @@ final class ExcelTest extends TestCase
             Tools\Excel::getDatas('data-wrong.xlsx');
     }
 
-
-
     private static  $datas = [
                 ['data 1' , 'data 2', 'data 3'],
                 ['data 1' , 'data 2', 'data 3'],
