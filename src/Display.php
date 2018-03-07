@@ -23,7 +23,7 @@ class Display
 
     public static function addPredicate($predicate)
     {
-        $msg = '';
+        $msg = ''; 
         foreach ($predicate as $label => $value)
         {
             $msg .= $label . " : " . $value . " ";
