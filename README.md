@@ -3,7 +3,11 @@ A set of usefull tools for php
 
 ## Installation
 
+It must be added to your project. The prefer way is via composer
+
+```bash
 composer require flottin/tools:dev-master -vvv
+```
 
 ## Runing tests
 

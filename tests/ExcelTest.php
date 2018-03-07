@@ -10,38 +10,6 @@ final class ExcelTest extends TestCase
             Tools\Excel::getDatas('data-wrong.xlsx');
     }
 
-    private static $row = [
-            'Column A',
-            'Column B',
-            '',
-            'Column D',
-            'Column E',
-            'Column F',
-            ];
-
-    public function testColumnRight()
-    {
-        Tools\Tool::add(self::$row);
-
-        $this->assertEquals(
-            'Column A',
-            Tools\Tool::cell('A')
-        );
-    }
-
-
-
-    public function testColumnWrong()
-    {
-
-        Tools\Tool::add(self::$row);
-
-        $this->assertNotEquals(
-            'Column A',
-            Tools\Tool::cell('B')
-        );
-    }
-
 
 
     private static  $datas = [

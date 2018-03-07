@@ -116,15 +116,3 @@ class Integrity
         return self::$errors;
     }
 }
-
-class Error
-{
-    public $col;
-
-    public $rowid;
-
-    public $value;
-
-    public $msg;
-
-}

@@ -8,7 +8,50 @@ use Tools\Display;
  */
 class Report
 {
-    private static $reportPath = "../var/reports/";
+    private static $reportPath  = "../var/reports/";
+
+    public static function getHeader($errors):array
+    {
+        $header = [];
+        foreach ($errors as $rowErrors)
+        {
+            foreach($rowErrors as $k => $err)
+            {
+                $header[] = $k;
+            }
+            return $header;
+        }
+        return $header;
+    }
+
+    public static function getbody($errors):array
+    {
+        $body = [];
+        foreach ($errors as $rowErrors) {
+            foreach ($rowErrors as $error)
+            {
+                $body [] = (array)$error;
+            }
+        }
+        return $body;
+    }
+
+    public static function getHtml($header, $body):string
+    {
+
+    }
+
+    public static function getCsv($header, $body):string
+    {
+
+    }
+
+    public static function sendMail($header, $body):string
+    {
+
+    }
+
+
 
     public static function csv($errors, $importName = 'report' )
     {
@@ -80,7 +123,7 @@ class Report
     public static function checkDir($dirname)
     {
         if (!is_dir($dirname)) {
-            mkdir($dirname);
+            mkdir($dirname, 0777, true);
         }
     }
 
