@@ -1,5 +1,5 @@
 <?php
-namespace Excel;
+namespace Tools;
 
 
 class Integrity

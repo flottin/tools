@@ -1,7 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-final class TestTools extends TestCase
+final class ObjectsListTest extends TestCase
 {
     private $listPersons;
 
@@ -21,7 +21,7 @@ final class TestTools extends TestCase
    public function testObjectsFindElements()
    {
         self::getPersons();
-        $list = new  Tools\Search($this->listPersons);
+        $list = new  Tools\ObjectsList($this->listPersons);
         $predicate = ['name' => 'bob'];
         $res = $list->find($predicate);
         $this->assertEquals(
@@ -48,7 +48,7 @@ final class TestTools extends TestCase
    public function testObjectsFindDoublePredicate()
    {
         self::getPersons();
-        $list = new  Tools\Search($this->listPersons);
+        $list = new  Tools\ObjectsList($this->listPersons);
         $predicate = ['name' => 'bob', 'mail' => 'bob@yopmail.com'];
         $res = $list->find($predicate);
         $this->assertEquals(

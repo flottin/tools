@@ -16,43 +16,50 @@ composer require phpunit/phpunit:^5
 
 # run the tests
 vendor\bin\phpunit.bat --bootstrap vendor/autoload.php --testdox vendor\excel\find\tests\
+
+#  generate code coverage report
+./vendor/bin/phpunit --bootstrap vendor/autoload.php  tests --coverage-html code-coverage --whitelist src
 ```
 
 
 ## Usage
 
-### String
+### Text
+
+### Report
 
 ### Object
 
 find object in a list according to a predicate
 
 ```php
+
 <?php
 use Tools\;
 
 $obj = new stdClass;
 
 $predicate	= ['name' => 'bob', 'mail' => 'bob@yopmail.com'];
-$list		=
+$list		= '';
+?>
+
 ```
+
+
 
 
 ### Sendgrid
 
 ### Curl
 
-# Excel
+### Excel
 
 - parse a large excel file (thanks to use akeano excel)
 - check its integrity and provide a report on integrity errors
 - use of anonymous function
 - tested
 - code coverage
-
-
-
-## add a reader speed for big files
+- add efficient reader for parsing big files
 
 ```php
 <?php
@@ -90,7 +97,6 @@ Excel::integrity($datas, $config, $uniqs, $function);
 ?>
 ```
 
-
-## add integrity + report
-
 ### Ftp
+
+### Curl

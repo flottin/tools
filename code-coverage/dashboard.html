@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /var/www/tools/src</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href=".css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href=".css/style.css" rel="stylesheet" type="text/css">
+  <!--[if lt IE 9]>
+  <script src=".js/html5shiv.min.js"></script>
+  <script src=".js/respond.min.js"></script>
+  <![endif]-->
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <div class="row">
+     <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="index.html">/var/www/tools/src</a></li>
+        <li class="active">(Dashboard)</li>
+
+      </ol>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Display.php.html#11">AppBundle\Tools\Display</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ftp.php.html#4">Tools\Ftp</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Report.php.html#9">Tools\Report</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#5">Tools\Text</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Timer.php.html#9">Tools\Timer</a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Tool.php.html#4">Tools\Tool</a></td><td class="text-right">37%</td></tr>
+       <tr><td><a href="Excel.php.html#6">Tools\Excel</a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Integrity.php.html#5">Tools\Integrity</a></td><td class="text-right">65%</td></tr>
+       <tr><td><a href="ObjectsList.php.html#10">Tools\ObjectsList</a></td><td class="text-right">66%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Display.php.html#11">AppBundle\Tools\Display</a></td><td class="text-right">552</td></tr>
+       <tr><td><a href="Text.php.html#5">Tools\Text</a></td><td class="text-right">342</td></tr>
+       <tr><td><a href="Report.php.html#9">Tools\Report</a></td><td class="text-right">182</td></tr>
+       <tr><td><a href="Timer.php.html#9">Tools\Timer</a></td><td class="text-right">90</td></tr>
+       <tr><td><a href="Ftp.php.html#4">Tools\Ftp</a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="ObjectsList.php.html#10">Tools\ObjectsList</a></td><td class="text-right">45</td></tr>
+       <tr><td><a href="Tool.php.html#4">Tools\Tool</a></td><td class="text-right">23</td></tr>
+       <tr><td><a href="Integrity.php.html#5">Tools\Integrity</a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Excel.php.html#6">Tools\Excel</a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Display.php.html#19"><abbr title="AppBundle\Tools\Display::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#24"><abbr title="Tools\Text::getStringAsOneLine">getStringAsOneLine</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ObjectsList.php.html#150"><abbr title="Tools\ObjectsList::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ObjectsList.php.html#159"><abbr title="Tools\ObjectsList::getList">getList</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Report.php.html#13"><abbr title="Tools\Report::csv">csv</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Report.php.html#50"><abbr title="Tools\Report::displayPath">displayPath</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Report.php.html#57"><abbr title="Tools\Report::bash">bash</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Report.php.html#62"><abbr title="Tools\Report::mail">mail</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Report.php.html#67"><abbr title="Tools\Report::clean">clean</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Report.php.html#80"><abbr title="Tools\Report::checkDir">checkDir</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#7"><abbr title="Tools\Text::clean">clean</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#12"><abbr title="Tools\Text::anchorize">anchorize</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#35"><abbr title="Tools\Text::cutStringRespectingWhitespace">cutStringRespectingWhitespace</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#24"><abbr title="AppBundle\Tools\Display::addPredicate">addPredicate</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#49"><abbr title="Tools\Text::toUrl">toUrl</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#72"><abbr title="Tools\Text::getLastSegment">getLastSegment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#90"><abbr title="Tools\Text::getLastSegments">getLastSegments</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#117"><abbr title="Tools\Text::getFirstSegment">getFirstSegment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Text.php.html#136"><abbr title="Tools\Text::getSegment">getSegment</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Timer.php.html#22"><abbr title="Tools\Timer::microtime_diff">microtime_diff</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Timer.php.html#34"><abbr title="Tools\Timer::start">start</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Timer.php.html#39"><abbr title="Tools\Timer::end">end</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Timer.php.html#51"><abbr title="Tools\Timer::bip">bip</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Tool.php.html#37"><abbr title="Tools\Tool::columnName">columnName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ObjectsList.php.html#141"><abbr title="Tools\ObjectsList::findLike">findLike</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ObjectsList.php.html#131"><abbr title="Tools\ObjectsList::firstLike">firstLike</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#142"><abbr title="AppBundle\Tools\Display::error">error</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#39"><abbr title="AppBundle\Tools\Display::display">display</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#71"><abbr title="AppBundle\Tools\Display::sep">sep</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#77"><abbr title="AppBundle\Tools\Display::start">start</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#85"><abbr title="AppBundle\Tools\Display::end">end</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#100"><abbr title="AppBundle\Tools\Display::bip">bip</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#124"><abbr title="AppBundle\Tools\Display::errors">errors</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#49"><abbr title="AppBundle\Tools\Display::println">println</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#157"><abbr title="AppBundle\Tools\Display::errorln">errorln</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ftp.php.html#8"><abbr title="Tools\Ftp::init">init</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#58"><abbr title="AppBundle\Tools\Display::writeback">writeback</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ftp.php.html#21"><abbr title="Tools\Ftp::get">get</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ftp.php.html#26"><abbr title="Tools\Ftp::put">put</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ftp.php.html#32"><abbr title="Tools\Ftp::listDir">listDir</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Ftp.php.html#37"><abbr title="Tools\Ftp::close">close</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#34"><abbr title="AppBundle\Tools\Display::addsep">addsep</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Integrity.php.html#114"><abbr title="Tools\Integrity::getErrors">getErrors</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ObjectsList.php.html#31"><abbr title="Tools\ObjectsList::add">add</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Display.php.html#66"><abbr title="AppBundle\Tools\Display::writeln">writeln</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Integrity.php.html#63"><abbr title="Tools\Integrity::uniq">uniq</abbr></a></td><td class="text-right">18%</td></tr>
+       <tr><td><a href="Tool.php.html#58"><abbr title="Tools\Tool::id">id</abbr></a></td><td class="text-right">33%</td></tr>
+       <tr><td><a href="Excel.php.html#17"><abbr title="Tools\Excel::getDatas">getDatas</abbr></a></td><td class="text-right">50%</td></tr>
+       <tr><td><a href="Integrity.php.html#41"><abbr title="Tools\Integrity::applyFunction">applyFunction</abbr></a></td><td class="text-right">54%</td></tr>
+       <tr><td><a href="ObjectsList.php.html#112"><abbr title="Tools\ObjectsList::first">first</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="ObjectsList.php.html#43"><abbr title="Tools\ObjectsList::find">find</abbr></a></td><td class="text-right">77%</td></tr>
+       <tr><td><a href="Tool.php.html#15"><abbr title="Tools\Tool::cell">cell</abbr></a></td><td class="text-right">80%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Report.php.html#13"><abbr title="Tools\Report::csv">csv</abbr></a></td><td class="text-right">56</td></tr>
+       <tr><td><a href="Display.php.html#100"><abbr title="AppBundle\Tools\Display::bip">bip</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="Timer.php.html#51"><abbr title="Tools\Timer::bip">bip</abbr></a></td><td class="text-right">20</td></tr>
+       <tr><td><a href="ObjectsList.php.html#43"><abbr title="Tools\ObjectsList::find">find</abbr></a></td><td class="text-right">18</td></tr>
+       <tr><td><a href="Text.php.html#72"><abbr title="Tools\Text::getLastSegment">getLastSegment</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Display.php.html#124"><abbr title="AppBundle\Tools\Display::errors">errors</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Ftp.php.html#8"><abbr title="Tools\Ftp::init">init</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Text.php.html#117"><abbr title="Tools\Text::getFirstSegment">getFirstSegment</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Text.php.html#90"><abbr title="Tools\Text::getLastSegments">getLastSegments</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Text.php.html#35"><abbr title="Tools\Text::cutStringRespectingWhitespace">cutStringRespectingWhitespace</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Integrity.php.html#63"><abbr title="Tools\Integrity::uniq">uniq</abbr></a></td><td class="text-right">7</td></tr>
+       <tr><td><a href="Tool.php.html#37"><abbr title="Tools\Tool::columnName">columnName</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Timer.php.html#39"><abbr title="Tools\Timer::end">end</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Timer.php.html#22"><abbr title="Tools\Timer::microtime_diff">microtime_diff</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Text.php.html#136"><abbr title="Tools\Text::getSegment">getSegment</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Display.php.html#24"><abbr title="AppBundle\Tools\Display::addPredicate">addPredicate</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Report.php.html#80"><abbr title="Tools\Report::checkDir">checkDir</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Display.php.html#39"><abbr title="AppBundle\Tools\Display::display">display</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Display.php.html#142"><abbr title="AppBundle\Tools\Display::error">error</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Display.php.html#85"><abbr title="AppBundle\Tools\Display::end">end</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Integrity.php.html#41"><abbr title="Tools\Integrity::applyFunction">applyFunction</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Tool.php.html#58"><abbr title="Tools\Tool::id">id</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Tool.php.html#15"><abbr title="Tools\Tool::cell">cell</abbr></a></td><td class="text-right">3</td></tr>
+       <tr><td><a href="Excel.php.html#17"><abbr title="Tools\Excel::getDatas">getDatas</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="ObjectsList.php.html#112"><abbr title="Tools\ObjectsList::first">first</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 5.3.0</a> using <a href="https://secure.php.net/" target="_top">PHP 7.2.2-1+0~20180205160612.18+jessie~1.gbpb78b58</a> with <a href="https://xdebug.org/">Xdebug 2.6.0</a> and <a href="https://phpunit.de/">PHPUnit 6.5.0</a> at Wed Mar 7 0:55:34 UTC 2018.</small>
+    </p>
+   </footer>
+  </div>
+  <script src=".js/jquery.min.js" type="text/javascript"></script>
+  <script src=".js/bootstrap.min.js" type="text/javascript"></script>
+  <script src=".js/holder.min.js" type="text/javascript"></script>
+  <script src=".js/d3.min.js" type="text/javascript"></script>
+  <script src=".js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([5,0,0,0,1,0,1,2,0,0,0,1], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([45,0,1,0,1,0,2,0,2,1,0,5], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[0,23,"<a href=\"Display.php.html#11\">AppBundle\\Tools\\Display<\/a>"],[50,2,"<a href=\"Excel.php.html#6\">Tools\\Excel<\/a>"],[0,7,"<a href=\"Ftp.php.html#4\">Tools\\Ftp<\/a>"],[65.11627906976744,13,"<a href=\"Integrity.php.html#5\">Tools\\Integrity<\/a>"],[100,0,"<a href=\"Integrity.php.html#120\">Tools\\Error<\/a>"],[66.66666666666666,24,"<a href=\"ObjectsList.php.html#10\">Tools\\ObjectsList<\/a>"],[0,13,"<a href=\"Report.php.html#9\">Tools\\Report<\/a>"],[0,18,"<a href=\"Text.php.html#5\">Tools\\Text<\/a>"],[0,9,"<a href=\"Timer.php.html#9\">Tools\\Timer<\/a>"],[37.5,8,"<a href=\"Tool.php.html#4\">Tools\\Tool<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[0,1,"<a href=\"Display.php.html#19\">AppBundle\\Tools\\Display::add<\/a>"],[0,2,"<a href=\"Display.php.html#24\">AppBundle\\Tools\\Display::addPredicate<\/a>"],[0,1,"<a href=\"Display.php.html#34\">AppBundle\\Tools\\Display::addsep<\/a>"],[0,2,"<a href=\"Display.php.html#39\">AppBundle\\Tools\\Display::display<\/a>"],[0,1,"<a href=\"Display.php.html#49\">AppBundle\\Tools\\Display::println<\/a>"],[0,1,"<a href=\"Display.php.html#58\">AppBundle\\Tools\\Display::writeback<\/a>"],[0,1,"<a href=\"Display.php.html#66\">AppBundle\\Tools\\Display::writeln<\/a>"],[0,1,"<a href=\"Display.php.html#71\">AppBundle\\Tools\\Display::sep<\/a>"],[0,1,"<a href=\"Display.php.html#77\">AppBundle\\Tools\\Display::start<\/a>"],[0,2,"<a href=\"Display.php.html#85\">AppBundle\\Tools\\Display::end<\/a>"],[0,4,"<a href=\"Display.php.html#100\">AppBundle\\Tools\\Display::bip<\/a>"],[0,3,"<a href=\"Display.php.html#124\">AppBundle\\Tools\\Display::errors<\/a>"],[0,2,"<a href=\"Display.php.html#142\">AppBundle\\Tools\\Display::error<\/a>"],[0,1,"<a href=\"Display.php.html#157\">AppBundle\\Tools\\Display::errorln<\/a>"],[50,2,"<a href=\"Excel.php.html#17\">Tools\\Excel::getDatas<\/a>"],[0,3,"<a href=\"Ftp.php.html#8\">Tools\\Ftp::init<\/a>"],[0,1,"<a href=\"Ftp.php.html#21\">Tools\\Ftp::get<\/a>"],[0,1,"<a href=\"Ftp.php.html#26\">Tools\\Ftp::put<\/a>"],[0,1,"<a href=\"Ftp.php.html#32\">Tools\\Ftp::listDir<\/a>"],[0,1,"<a href=\"Ftp.php.html#37\">Tools\\Ftp::close<\/a>"],[100,2,"<a href=\"Integrity.php.html#24\">Tools\\Integrity::parse<\/a>"],[54.54545454545454,3,"<a href=\"Integrity.php.html#41\">Tools\\Integrity::applyFunction<\/a>"],[18.181818181818183,3,"<a href=\"Integrity.php.html#63\">Tools\\Integrity::uniq<\/a>"],[100,2,"<a href=\"Integrity.php.html#86\">Tools\\Integrity::checkRow<\/a>"],[100,2,"<a href=\"Integrity.php.html#98\">Tools\\Integrity::checkCol<\/a>"],[0,1,"<a href=\"Integrity.php.html#114\">Tools\\Integrity::getErrors<\/a>"],[100,1,"<a href=\"ObjectsList.php.html#22\">Tools\\ObjectsList::__construct<\/a>"],[0,1,"<a href=\"ObjectsList.php.html#31\">Tools\\ObjectsList::add<\/a>"],[77.77777777777779,16,"<a href=\"ObjectsList.php.html#43\">Tools\\ObjectsList::find<\/a>"],[75,2,"<a href=\"ObjectsList.php.html#112\">Tools\\ObjectsList::first<\/a>"],[0,1,"<a href=\"ObjectsList.php.html#131\">Tools\\ObjectsList::firstLike<\/a>"],[0,1,"<a href=\"ObjectsList.php.html#141\">Tools\\ObjectsList::findLike<\/a>"],[0,1,"<a href=\"ObjectsList.php.html#150\">Tools\\ObjectsList::get<\/a>"],[0,1,"<a href=\"ObjectsList.php.html#159\">Tools\\ObjectsList::getList<\/a>"],[0,7,"<a href=\"Report.php.html#13\">Tools\\Report::csv<\/a>"],[0,1,"<a href=\"Report.php.html#50\">Tools\\Report::displayPath<\/a>"],[0,1,"<a href=\"Report.php.html#57\">Tools\\Report::bash<\/a>"],[0,1,"<a href=\"Report.php.html#62\">Tools\\Report::mail<\/a>"],[0,1,"<a href=\"Report.php.html#67\">Tools\\Report::clean<\/a>"],[0,2,"<a href=\"Report.php.html#80\">Tools\\Report::checkDir<\/a>"],[0,1,"<a href=\"Text.php.html#7\">Tools\\Text::clean<\/a>"],[0,1,"<a href=\"Text.php.html#12\">Tools\\Text::anchorize<\/a>"],[0,1,"<a href=\"Text.php.html#24\">Tools\\Text::getStringAsOneLine<\/a>"],[0,3,"<a href=\"Text.php.html#35\">Tools\\Text::cutStringRespectingWhitespace<\/a>"],[0,1,"<a href=\"Text.php.html#49\">Tools\\Text::toUrl<\/a>"],[0,3,"<a href=\"Text.php.html#72\">Tools\\Text::getLastSegment<\/a>"],[0,3,"<a href=\"Text.php.html#90\">Tools\\Text::getLastSegments<\/a>"],[0,3,"<a href=\"Text.php.html#117\">Tools\\Text::getFirstSegment<\/a>"],[0,2,"<a href=\"Text.php.html#136\">Tools\\Text::getSegment<\/a>"],[0,2,"<a href=\"Timer.php.html#22\">Tools\\Timer::microtime_diff<\/a>"],[0,1,"<a href=\"Timer.php.html#34\">Tools\\Timer::start<\/a>"],[0,2,"<a href=\"Timer.php.html#39\">Tools\\Timer::end<\/a>"],[0,4,"<a href=\"Timer.php.html#51\">Tools\\Timer::bip<\/a>"],[100,1,"<a href=\"Tool.php.html#10\">Tools\\Tool::add<\/a>"],[80,3,"<a href=\"Tool.php.html#15\">Tools\\Tool::cell<\/a>"],[0,2,"<a href=\"Tool.php.html#37\">Tools\\Tool::columnName<\/a>"],[33.33333333333333,2,"<a href=\"Tool.php.html#58\">Tools\\Tool::id<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>
