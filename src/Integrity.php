@@ -1,7 +1,6 @@
 <?php
-namespace Excel;
+namespace Tools;
 
-use Akeneo\Component\SpreadsheetParser\SpreadsheetParser;
 
 class Integrity
 {
@@ -39,7 +38,7 @@ class Integrity
     /**
     * set error column row not unique
     */
-    public function applyFunction($functions, $rowid):void
+    public static function applyFunction($functions, $rowid):void
     {
         foreach ($functions as $col => $funct)
         {
@@ -61,7 +60,7 @@ class Integrity
     /**
     * set error column row not unique
     */
-    public function uniq($rowid):void
+    public static function uniq($rowid):void
     {
         foreach(self::$uniqs as $uniq)
         {
@@ -116,16 +115,4 @@ class Integrity
     {
         return self::$errors;
     }
-}
-
-class Error
-{
-    public $col;
-
-    public $rowid;
-
-    public $value;
-
-    public $msg;
-
 }

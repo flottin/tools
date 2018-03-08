@@ -2,7 +2,7 @@
     "name": "flottin/tools",
     "type": "library",
     "description": "set of usefull tools for php",
-    "keywords": ["tools","predicate", "list", "object", "excel", "ftp"],
+    "keywords": ["tools", "predicate", "list", "object", "excel", "ftp"],
     "homepage": "https://github.com/flottin/tools",
     "license": "MIT",
     "authors": [
@@ -27,6 +27,6 @@
         ]
     },
     "require-dev": {
-        "phpunit/phpunit": "7"
+        "phpunit/phpunit": "6.5"
     }
 }

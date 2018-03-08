@@ -6,7 +6,6 @@ namespace Tools;
 * $list = new Search($arr);
 * $predicate = ['name' => 'bob', mail => 'test@test.test'];
 * $list->find($predicate)
-*
 */
 class ObjectsList
 {

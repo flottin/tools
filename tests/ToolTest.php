@@ -1,8 +1,9 @@
-Ë<?php
+<?php
 use PHPUnit\Framework\TestCase;
 
 final class ToolTest extends TestCase
 {
+
     private static $row = [
             'Column A',
             'Column B',
@@ -14,24 +15,15 @@ final class ToolTest extends TestCase
 
     public function testColumnRight()
     {
-        Excel\Tool::add(self::$row);
-
-        $this->assertEquals(
-            'Column A',
-            Excel\Tool::cell('A')
-        );
+        Tools\Tool::add(self::$row);
+        $this->assertEquals('Column A', Tools\Tool::cell('A'));
     }
-
-
 
     public function testColumnWrong()
     {
-
-        Excel\Tool::add(self::$row);
-
-        $this->assertNotEquals(
-            'Column A',
-            Excel\Tool::cell('B')
-        );
+        Tools\Tool::add(self::$row);
+        $this->assertNotEquals('Column A', Tools\Tool::cell('B'));
     }
+
+
 }
