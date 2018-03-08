@@ -43,7 +43,7 @@ class Display
         self::$msg .= str_repeat('-', $count) . "\n";
     }
 
-    public static function display($display = true)
+    public static function show($display = true)
     {
         echo true === $display ? self::$msg : "";
         self::$msg = '';
@@ -81,7 +81,7 @@ class Display
         echo "\n";
     }
 
-    public static function start($msg = '')
+    public static function start($msg = ''):void
     {
         //self::sep(120);
         Timer::start();
