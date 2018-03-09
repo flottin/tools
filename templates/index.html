@@ -1,0 +1,51 @@
+<html>
+
+<body background-color=blue>
+    <style>
+
+    body{
+        font-family: monaco;
+        text-align: center;
+
+    }
+
+    .hoverTable{
+        width: 800px; margin-left: auto; margin-right: auto;
+
+
+    	}
+    .hoverTable td{
+    padding: 10px; border:grey 0px solid; margin: 2px; text-align: center;
+    }
+    /* Define the default color for all the table rows */
+    .hoverTable tr{
+    	background: lightgrey;
+    }
+
+    .hoverTable th{
+        padding: 10px; color: white; background: grey;
+    }
+
+    /* Define the hover highlight color for the table row */
+    .hoverTable tr:hover {
+          background-color: #ffff99;
+    }
+    </style>
+    <table class="hoverTable" style='width: 800px; margin-left: auto; margin-right: auto;'>
+        <thead>
+            <tr>
+            {% for item in header %}
+                <th style="font-family: monaco;padding: 10px; color: white; background: grey;">{{item}}</th>
+            {% endfor %}
+            </tr>
+        </thead>
+        {% for row in body %}
+            <tr>
+                {% for col in row %}
+                    <td style="font-family: monaco;background: lightgrey; padding: 10px; border:grey 0px solid; margin: 2px; text-align: center;">{{col}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -10,6 +10,7 @@ class Report
 {
     private static $reportPath  = "../var/reports/";
 
+
     public static function getHeader($errors)
     {
         $header = [];
@@ -24,15 +25,15 @@ class Report
         return $header;
     }
 
-    public static function getbody($errors)
+    public static function getBody($errors)
     {
         $body = [];
         foreach ($errors as $rowErrors) {
-            foreach ($rowErrors as $error)
-            {
-                $body [] = (array)$error;
-            }
+                $body [] = (array)$rowErrors;
+
         }
+
+
         return $body;
     }
 

@@ -1,0 +1,20 @@
+
+<style>
+    th
+    {
+        background-color: lightgrey;
+        padding: 10px;
+    }
+</style>
+
+
+{{dump(header)}}
+
+
+<table>
+<tr>
+{% for item in header %}
+<th>{{item}}</th>
+{% endfor %}
+</tr>
+</table>
