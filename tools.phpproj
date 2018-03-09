@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -62,7 +63,6 @@
     <Compile Include="templates\index.csv.html" />
     <Compile Include="templates\index.html" />
     <Compile Include="templates\index.html.twig" />
-    <Compile Include="tests\.fuse_hidden0000088100000007" />
     <Compile Include="tests\ExcelTest.php" />
     <Compile Include="tests\ObjectTest.php" />
     <Compile Include="tests\ReportTest.php" />
