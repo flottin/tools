@@ -32,45 +32,7 @@ class Report
                 $body [] = (array)$rowErrors;
 
         }
-
-
         return $body;
-    }
-
-    public static function getHtml($header, $body)
-    {
-        if (!empty($header) || !empty($body))
-        {
-            $res = '<table>';
-        }
-
-        if (!empty($header))
-        {
-            $res .= '<tr>';
-            foreach($header as $str)
-            {
-                $res .= "<th>$str</th>";
-            }
-            $res .= '</tr>';
-        }
-
-        if (!empty($body))
-        {
-            foreach($body as $row)
-            {
-                $res .= '<tr>';
-                foreach($row as $col)
-                {
-                    $res .= "<td>$col</td>";
-                }
-                $res .= '</tr>';
-            }
-        }
-        if (!empty($header) || !empty($body))
-        {
-            $res .= '</table>';
-        }
-        return $res;
     }
 
     public static function getCsv($header, $body, $name, $path)

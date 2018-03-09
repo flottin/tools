@@ -62,7 +62,7 @@ final class ReportTest
         $body = \Tools\Report::getBody($errors);
         $datas = array('header' => $header, 'body' => $body);
         $content = $twig->render('index.html', $datas);
-        //echo $content;
+        echo $content;
 
         //$content = $twig->render('index.csv.html', $datas);
         //echo $content;

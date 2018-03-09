@@ -10,8 +10,6 @@ class Integrity
 
     private static $rowid;
 
-    private static $uniqs = [];
-
     private static $functions = [];
 
     private static $uniqData = [];
@@ -28,10 +26,12 @@ class Integrity
         {
             $rowid ++;
             Tool::add($row);
-            self::uniq($rowid);
+            self::uniq($uniqs, $rowid);
             self::applyFunction($functions, $rowid);
             self::checkRow($config, $rowid);
         }
+
+    var_dump(self::$uniqData);
         return true;
     }
 
@@ -40,19 +40,22 @@ class Integrity
     */
     public static function applyFunction($functions, $rowid):void
     {
-        foreach ($functions as $col => $funct)
+        foreach ($functions as $col => $functs)
         {
             $value = Tool::cell($col);
-            $check = $funct($value);
-            if (true === $check)
+            foreach ($functs as $funct)
             {
-                //set error
-                $error              = new Error();
-                $error->col         = $col;
-                $error->rowid       = $rowid;
-                $error->msg         = 'not uniq';
-                $error->value       = $value;
-                self::$errors[]     = $error;
+                $check = $funct($value);
+                if (!empty($check))
+                {
+                    //set error
+                    $error              = new Error();
+                    $error->col         = $col;
+                    $error->rowid       = $rowid;
+                    $error->msg         = $check;
+                    $error->value       = $value;
+                    self::$errors[]     = $error;
+                }
             }
         }
     }
@@ -60,24 +63,38 @@ class Integrity
     /**
     * set error column row not unique
     */
-    public static function uniq($rowid):void
+    public static function uniq($uniqs, $rowid):void
     {
-        foreach(self::$uniqs as $uniq)
+
+        foreach($uniqs as $uniq)
         {
             $key = implode('_', $uniq);
-            if (in_array(self::$uniqData[$key], Tool::cell($col)))
+            $val = '';
+            foreach ($uniq as $col)
+            {
+                $val .= Tool::cell($col);
+
+            }
+
+
+            if (!isset(self::$uniqData[$key]))
+            {
+                self::$uniqData[$key][] = $val;
+                continue;
+            }
+            if (in_array($val, self::$uniqData[$key]))
             {
 
                 $error              = new Error();
-                $error->col         = $col;
+                $error->col         = $key;
                 $error->rowid       = $rowid;
                 $error->msg         = 'not uniq';
                 $error->value       = $key;
                 self::$errors[]     = $error;
             }
-            self::$uniqData[$key] = Tool::cell($col);
-
+            self::$uniqData[$key][] = $val;
         }
+
     }
 
     /**
