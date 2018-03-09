@@ -3,3 +3,6 @@ composer.lock
 /.vs
 /.vscode
 web.config
+tools.sln
+tools.phpproj
+web.config
