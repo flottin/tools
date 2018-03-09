@@ -3,7 +3,7 @@ namespace Tools;
 
 class Sendgrid{
 
-     public static function send($contentHtml)
+     public static function send($contentHtml, $apiKey)
      {
          $from = new \SendGrid\Email("Florent LOTTIN", "flottin@free.com");
          $subject = "Sending from php";
@@ -11,7 +11,7 @@ class Sendgrid{
 
          $content = new \SendGrid\Content("text/plain", 'contentHtml');
          $mail = new \SendGrid\Mail($from, $subject, $to, $content);
-         $apiKey = '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';
+         
          $sg = new \SendGrid($apiKey);
          $response = $sg->client->mail()->send()->post($mail);
 
