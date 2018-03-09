@@ -15,13 +15,9 @@ class Sendgrid{
          $sg = new \SendGrid($apiKey);
          $response = $sg->client->mail()->send()->post($mail);
 
-var_dump($response);
-         //
+         var_dump($response);
           echo $response->statusCode();
           print_r($response->headers());
-
-
-
          // echo $response->body();
      }
 

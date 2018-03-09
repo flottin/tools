@@ -5,19 +5,6 @@ require '../vendor/autoload.php';
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-$from = new SendGrid\Email(null, "dx@sendgrid.com");
-$subject = "Hello World from the SendGrid PHP Library!";
-$to = new SendGrid\Email(null, "flottin@gmail.com");
-$content = new SendGrid\Content("text/plain", "Hello, Email!");
-$mail = new SendGrid\Mail($from, $subject, $to, $content);
-
-$apiKey = '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';
-$sg = new \SendGrid($apiKey);
-
-$response = $sg->client->mail()->send()->post($mail);
-var_dump($response);
-
-
 final class ReportTest
 {
 
@@ -64,10 +51,6 @@ final class ReportTest
 
     public static function run()
     {
-
-
-
-
         $loader = new Twig_Loader_Filesystem('../templates');
         $twig = new Twig_Environment($loader, array(
             'debug' => true,
@@ -79,12 +62,13 @@ final class ReportTest
         $body = \Tools\Report::getBody($errors);
         $datas = array('header' => $header, 'body' => $body);
         $content = $twig->render('index.html', $datas);
-        echo $content;
+        //echo $content;
 
+        //$content = $twig->render('index.csv.html', $datas);
+        //echo $content;
 
         //self::send($content);
-
-        Tools\Sendgrid::send($content);
+        //Tools\Sendgrid::send($content);
 
     }
 
