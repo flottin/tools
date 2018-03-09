@@ -1,6 +1,10 @@
 ﻿<?php
 require '../vendor/autoload.php';
 //use
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
 final class ReportTest
 {
 
@@ -12,6 +16,26 @@ final class ReportTest
             ['row 3', 'ok2', 'ok3']
           ];
 
+          public static function getErrors()
+          {
+                  $error = new Tools\Error();
+                  $error->rowid = 1;
+                  $error->col = 'A';
+                  $error->msg = 'an error message!';
+
+                  $error->value = 'the value';
+                  Tools\Errors::add($error);
+
+                  $error = new Tools\Error();
+                  $error->rowid = 2;
+                  $error->col = 'B';
+                  $error->msg = 'an error message!';
+
+                  $error->value = 'the value';
+                  Tools\Errors::add($error);
+                  return Tools\Errors::getErrors();
+          }
+
     public function testGetHtml()
     {
         $res = \Tools\Report::getHtml(self::$header, self::$body);
@@ -20,27 +44,49 @@ final class ReportTest
 
     public function testGetCsv()
     {
-        $res = \Tools\Report::getCsv(self::$header, self::$body, 'ok', '../var/report/');
+        return  \Tools\Report::getCsv(self::$header, self::$body, 'ok', '../var/report/');
         echo $res;
     }
-}
-$report = new ReportTest();
 
 
-?>
+    public static function run()
+    {
+        $loader = new Twig_Loader_Filesystem('../templates');
+        $twig = new Twig_Environment($loader, array(
+            'debug' => true,
+        ));
+        $twig->addExtension(new Twig_Extension_Debug());
 
-<style>
+        $errors = self::getErrors();
+        $header = \Tools\Report::getHeader($errors);
+        $body = \Tools\Report::getBody($errors);
+        $datas = array('header' => $header, 'body' => $body);
+        $content = $twig->render('index.html', $datas);
+        echo $content;
 
-    th {
-        background-color : blue;
+        //$content = $twig->render('index.csv.html', $datas);
+        //echo $content;
+
+        //self::send($content);
+        //Tools\Sendgrid::send($content);
+
     }
 
-</style>
+    public static function send($content)
+    {
+        $to = 'flottin@gamil.com';
 
-<?php
+        $subject = 'Website Change Request';
 
+        $headers = "From: " . strip_tags($to) . "\r\n";
+        $headers .= "Reply-To: ". strip_tags($to) . "\r\n";
+        //$headers .= "CC: susan@example.com\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
+        mail('flottin@gmail.com', 'Mon Sujet', $content, $headers);
 
-$report->testGetHtml();
+    }
 
-$report->testGetCsv();
+}
+ReportTest::run();

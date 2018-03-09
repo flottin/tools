@@ -10,20 +10,14 @@ namespace Tools;
 class ObjectsList
 {
     private $list = array();
-
     private $results = array();
-
     private $begin = true;
-
     private $count = 0;
-
     private $countSearch = 0;
-
     public function __construct($list = array())
     {
         $this->list = $list;
     }
-
     /**
      *
      * @param mixed $object
@@ -32,8 +26,6 @@ class ObjectsList
     {
         $this->list [] = $object;
     }
-
-
     /**
      * recursively find objects in a list
      * @param array $search
@@ -54,21 +46,16 @@ class ObjectsList
             $list = $this->list;
             $this->begin = false;
         }
-
-
         if (!empty($search) && !empty($list))
         {
             foreach($search as $index => $value)
             {
-
                 foreach($list as $arrayInf)
                 {
                     if (isset($arrayInf->{$index}))
                     {
-
                         if (true === $like && (!empty($arrayInf->{$index})&& (!empty($value))))
                         {
-
                             if(false !== strpos(strtolower($arrayInf->{$index}), strtolower($value)) )
                             {
                                 $result[] = $arrayInf;
@@ -81,7 +68,6 @@ class ObjectsList
                                 $result[] = $arrayInf;
                             }
                         }
-
                     }
                 }
                 Break;
@@ -91,7 +77,6 @@ class ObjectsList
             {
                 $this->begin = true;
                 $this->count = 0;
-
                 return $result;
             }
             else
@@ -103,7 +88,6 @@ class ObjectsList
         $this->count = 0;
         return $result;
     }
-
     /**
      * Find the first element of the search
      * @param mixed $search
@@ -112,7 +96,6 @@ class ObjectsList
     public function first( $search, $like = false )
     {
         $result = self::find($search, array(), $like );
-
         if (isset($result[0]))
         {
             return $result[0];
@@ -122,7 +105,6 @@ class ObjectsList
             return  $result;
         }
     }
-
     /**
      * Find the first element of the search
      * @param mixed $search
@@ -132,7 +114,6 @@ class ObjectsList
     {
         return self::first($search, true);
     }
-
     /**
      * Find the first element of the search
      * @param mixed $search
@@ -142,7 +123,6 @@ class ObjectsList
     {
         return self::find($search, array(), true);
     }
-
     /**
      * get the whole list
      * @return array
@@ -151,7 +131,6 @@ class ObjectsList
     {
         return $this->list;
     }
-
     /**
      * get the whole list
      * @return array

@@ -1,0 +1,7 @@
+{% spaceless %}
+{% for item in header %}{{item}};{% endfor %}
+
+{% for row in body %}{% for col in row %}{{col}};{% endfor %}
+
+{% endfor %}
+{% endspaceless %}

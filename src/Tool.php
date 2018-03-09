@@ -1,17 +1,13 @@
 <?php
 namespace Tools;
-
 class Tool
 {
     public static $letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
     private static $row = array();
-
     public static function add($row)
     {
         self::$row = $row ;
     }
-
     public static function cell($s)
     {
         $id = self::id($s);
@@ -28,7 +24,6 @@ class Tool
             return null;
         }
     }
-
     /**
      *
      * @param int $i

@@ -1,10 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
-
 final class ObjectsListTest extends TestCase
 {
     private $listPersons;
-
     public function testObjectsFindEmpty()
     {
         self::getPersons();
@@ -14,10 +12,8 @@ final class ObjectsListTest extends TestCase
         $this->assertEquals(
             [],
             $res
-
         );
     }
-
    public function testObjectsFindElements()
    {
         self::getPersons();
@@ -27,24 +23,19 @@ final class ObjectsListTest extends TestCase
         $this->assertEquals(
             2,
             count($res)
-
         );
     }
-
    public function testObjectsFirst()
    {
        self::getPersons();
        $list = new  Tools\ObjectsList($this->listPersons);
        $predicate = ['name' => 'bob'];
        $res = $list->first($predicate);
-
        $this->assertEquals(
            'bob',
            $res->name
-
        );
    }
-
    public function testObjectsFindDoublePredicate()
    {
         self::getPersons();
@@ -54,10 +45,8 @@ final class ObjectsListTest extends TestCase
         $this->assertEquals(
             1,
             count($res)
-
         );
     }
-
    private function getPersons()
    {
        $this->listPersons [] = new Person('bob', 'bob@gmail.com');
@@ -67,9 +56,7 @@ final class ObjectsListTest extends TestCase
        $this->listPersons [] = new Person('ted', 'ted@ted.com');
        $this->listPersons [] = new Person('ted', 'ted@ted.com');
    }
-
 }
-
 class Person {
     public $name;
     public $mail;

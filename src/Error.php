@@ -1,14 +1,17 @@
 <?php
 namespace Tools;
 
+
 class Error
 {
-    public  $col;
 
-    public  $rowid;
 
-    public  $value;
+    public $rowid;
 
-    public  $msg;
+    public $col;
+
+    public $value;
+
+    public $msg;
 
 }
