@@ -4,6 +4,37 @@ namespace Tools;
 
 class Text
 {
+    public static function short($s)
+    {
+        $string = html_entity_decode(trim($s));
+        $string = self::cleanTags($string);
+        $count = mb_strlen($string);
+
+        $max = 164 + 7;
+        if ($count > $max)
+        {
+
+            $end = mb_substr($string, $max);
+            $space = mb_strpos ($end, ' ');
+
+            return mb_substr($string, 0, $max + $space) . '...';
+        }
+        else
+        {
+            return $string;
+        }
+    }
+
+    public static function cleanTags($s)
+    {
+        $o = preg_replace('#<b[a-zA-Z0-9 ="-;:]*>#', '<b>', $s);
+        $z = preg_replace('#<p[a-zA-Z0-9 ="-;:]*>#', '', $o);
+        $q = preg_replace('#</p>#', '', $z);
+        $p = preg_replace('#<strong>(.+)</strong>#', '<b>$1</b>', $q);
+        $res = preg_replace('#<strong[a-zA-Z0-9 ="-;]*>(.+)</strong>#', '<b>$1</b>', $p);
+        return $res;
+    }
+
     public static function clean($str)
     {
         return str_replace("'", "", str_replace(" ", "_", trim($str)));
