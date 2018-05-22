@@ -31,7 +31,7 @@ class Integrity
             self::checkRow($config, $rowid);
         }
 
-    var_dump(self::$uniqData);
+        var_dump(self::$uniqData);
         return true;
     }
 
